@@ -17,9 +17,9 @@ final class PayloadBuilder
         $url     = $request['url'] ?? null;
 
         return [
-            'level'           => 'error',
-            'exception_class' => get_class($e),
-            'message'         => $e->getMessage(),
+            'level'     => 'error',
+            'exception' => get_class($e),
+            'message'   => $e->getMessage(),
             'stacktrace'      => $this->buildStacktrace($e),
             'request'         => $request,
             'context'         => $this->scrubber->scrub([
